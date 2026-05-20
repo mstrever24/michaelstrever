@@ -92,31 +92,16 @@ const renderMediaSlot = (slot) => {
 
 document.querySelectorAll(".work-media").forEach(renderMediaSlot);
 
-const root = document.documentElement;
-const room = document.querySelector(".room");
+const cracks = document.querySelector(".cracks");
 
-const updateRoomDepth = () => {
-  if (!room) return;
+window.addEventListener(
+  "scroll",
+  () => {
+    const scrolled = window.scrollY;
 
-  const heroHeight = window.innerHeight || 1;
-  const depth = Math.min(window.scrollY / heroHeight, 1) * 120;
-  root.style.setProperty("--room-shift", `${(depth * 0.12).toFixed(1)}px`);
-  root.style.setProperty("--room-scale", (1 + depth * 0.00028).toFixed(4));
-};
-
-let depthTicking = false;
-
-const requestRoomDepthUpdate = () => {
-  if (depthTicking) return;
-
-  window.requestAnimationFrame(() => {
-    updateRoomDepth();
-    depthTicking = false;
-  });
-
-  depthTicking = true;
-};
-
-updateRoomDepth();
-window.addEventListener("scroll", requestRoomDepthUpdate, { passive: true });
-window.addEventListener("resize", requestRoomDepthUpdate);
+    if (cracks && scrolled < window.innerHeight) {
+      cracks.style.transform = `translateY(${scrolled * 0.15}px)`;
+    }
+  },
+  { passive: true }
+);
