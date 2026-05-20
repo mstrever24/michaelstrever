@@ -1,15 +1,14 @@
 # Michael Strever Portfolio
 
-A minimal static portfolio site for Michael Strever, focused on location sound
-recording and audio post-production in Amsterdam. The visual system uses dark
-greys, light greys, near-black concrete tones, serif display typography, subtle
-grain, and a 3D brutalist room hero.
+A minimal static portfolio site for Michael Strever, focused on immersive music,
+sound, and visual production work. The visual system uses cream concrete tones,
+maroon accents, serif display typography, and a brutalist 3D room hero.
 
 ## Files
 
 - `index.html` - page structure and portfolio copy
-- `styles.css` - grey concrete visual system, responsive layout, and media cards
-- `script.js` - reveal animations, work-bar animation, media slots, and crack parallax
+- `styles.css` - brutalist visual system, responsive layout, and concrete room
+- `script.js` - reveal animations, work-bar animation, and subtle crack parallax
 - `assets/work/` - portfolio media files for video and audio previews
 
 Open `index.html` directly in a browser, or serve the folder with any static
