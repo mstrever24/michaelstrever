@@ -456,8 +456,7 @@ section {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: minmax(0, 820px);
   align-items: start;
 }
 
@@ -477,37 +476,6 @@ section {
 .about-body em {
   color: var(--ink-mid);
   font-style: italic;
-}
-
-.about-stats {
-  display: flex;
-  flex-direction: column;
-}
-
-.stat-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding: 20px 0;
-  border-bottom: 0.5px solid var(--border);
-}
-
-.stat-row:first-child {
-  border-top: 0.5px solid var(--border);
-}
-
-.stat-num {
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 40px;
-  font-weight: 300;
-}
-
-.stat-name {
-  color: var(--ink-ghost);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 .services-grid {
