@@ -10,7 +10,18 @@
   --panel: rgba(16, 17, 16, 0.72);
   --line: rgba(216, 215, 207, 0.18);
   --shadow: rgba(0, 0, 0, 0.52);
-  --scroll-depth: 0;
+  --floor-depth-z: -6rem;
+  --floor-depth-y: 0rem;
+  --ceiling-depth-z: -5rem;
+  --ceiling-depth-y: 0rem;
+  --wall-depth-z: -2rem;
+  --left-wall-depth-x: 0rem;
+  --right-wall-depth-x: 0rem;
+  --end-depth-z: -36rem;
+  --end-depth-scale: 0.92;
+  --beam-one-z: -4rem;
+  --beam-two-z: -13rem;
+  --beam-three-z: -28rem;
   color-scheme: dark;
   font-family: "Space Grotesk", Arial, sans-serif;
   background: var(--black);
@@ -127,8 +138,8 @@ a {
   transform:
     translate(-50%, 16%)
     rotateX(74deg)
-    translateZ(calc(-6rem - (var(--scroll-depth) * 0.18rem)))
-    translateY(calc(var(--scroll-depth) * -0.8rem));
+    translateZ(var(--floor-depth-z))
+    translateY(var(--floor-depth-y));
   background-color: #181917;
 }
 
@@ -138,8 +149,8 @@ a {
   transform:
     translate(-50%, -108%)
     rotateX(-70deg)
-    translateZ(calc(-5rem - (var(--scroll-depth) * 0.16rem)))
-    translateY(calc(var(--scroll-depth) * 0.66rem));
+    translateZ(var(--ceiling-depth-z))
+    translateY(var(--ceiling-depth-y));
 }
 
 .corridor__wall {
@@ -153,16 +164,16 @@ a {
   transform:
     translate(-106%, -50%)
     rotateY(65deg)
-    translateZ(calc(-2rem - (var(--scroll-depth) * 0.18rem)))
-    translateX(calc(var(--scroll-depth) * -0.42rem));
+    translateZ(var(--wall-depth-z))
+    translateX(var(--left-wall-depth-x));
 }
 
 .corridor__wall--right {
   transform:
     translate(6%, -50%)
     rotateY(-65deg)
-    translateZ(calc(-2rem - (var(--scroll-depth) * 0.18rem)))
-    translateX(calc(var(--scroll-depth) * 0.42rem));
+    translateZ(var(--wall-depth-z))
+    translateX(var(--right-wall-depth-x));
 }
 
 .corridor__end {
@@ -170,8 +181,8 @@ a {
   height: 54vh;
   transform:
     translate(-50%, -50%)
-    translateZ(calc(-36rem + (var(--scroll-depth) * 0.82rem)))
-    scale(calc(0.92 + (var(--scroll-depth) * 0.004)));
+    translateZ(var(--end-depth-z))
+    scale(var(--end-depth-scale));
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 29%),
     linear-gradient(90deg, transparent 0 33%, rgba(0, 0, 0, 0.48) 33.4% 34.5%, transparent 34.9%),
@@ -191,14 +202,14 @@ a {
 .corridor__beam--one {
   transform:
     translate(-46vw, -50%)
-    translateZ(calc(-4rem + (var(--scroll-depth) * 0.54rem)))
+    translateZ(var(--beam-one-z))
     rotateY(3deg);
 }
 
 .corridor__beam--two {
   transform:
     translate(35vw, -50%)
-    translateZ(calc(-13rem + (var(--scroll-depth) * 0.66rem)))
+    translateZ(var(--beam-two-z))
     rotateY(-4deg);
 }
 
@@ -207,7 +218,7 @@ a {
   opacity: 0.78;
   transform:
     translate(-13vw, -50%)
-    translateZ(calc(-28rem + (var(--scroll-depth) * 0.78rem)))
+    translateZ(var(--beam-three-z))
     rotateY(2deg);
 }
 
@@ -289,7 +300,7 @@ main {
   backdrop-filter: blur(0.55rem);
   transform:
     translateZ(0)
-    translateY(calc(var(--panel-offset, 0) * 1px))
+    translateY(var(--panel-offset-y, 0px))
     scale(var(--panel-scale, 1));
   transform-origin: center;
 }
