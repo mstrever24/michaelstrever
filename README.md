@@ -9,6 +9,10 @@ maroon accents, serif display typography, and a brutalist 3D room hero.
 - `index.html` - page structure and portfolio copy
 - `styles.css` - brutalist visual system, responsive layout, and concrete room
 - `script.js` - reveal animations, work-bar animation, and subtle crack parallax
+- `assets/work/` - portfolio media files for video and audio previews
 
 Open `index.html` directly in a browser, or serve the folder with any static
 file server.
+
+To add portfolio media, place files in `assets/work/` and set the matching
+work card's `data-media-src` value in `index.html`.
