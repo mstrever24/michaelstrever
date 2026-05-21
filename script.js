@@ -46,6 +46,7 @@ const renderMediaSlot = (slot) => {
   const poster = slot.dataset.mediaPoster?.trim();
   const label = slot.dataset.mediaLabel || `${type} preview`;
   const file = slot.dataset.mediaFile || (type === "audio" ? "sample.mp3" : "sample.mp4");
+  const folder = slot.dataset.mediaFolder || "assets/work";
 
   slot.replaceChildren();
 
@@ -65,7 +66,7 @@ const renderMediaSlot = (slot) => {
 
     kicker.textContent = label;
     title.textContent = `Add ${file}`;
-    note.textContent = `Place the file in assets/work, then set data-media-src to assets/work/${file}.`;
+    note.textContent = `Place the file in ${folder}, then set data-media-src to ${folder}/${file}.`;
 
     placeholder.append(kicker, title, note);
     frame.append(placeholder);
