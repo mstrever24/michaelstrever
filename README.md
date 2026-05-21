@@ -7,8 +7,9 @@ maroon accents, serif display typography, and a brutalist 3D room hero.
 ## Files
 
 - `index.html` - page structure and portfolio copy
+- `gear.html` - dedicated location sound gear page
 - `styles.css` - brutalist visual system, responsive layout, and concrete room
-- `script.js` - reveal animations, work-bar animation, and subtle crack parallax
+- `script.js` - reveal animations, work-bar animation, media slots, and subtle crack parallax
 - `assets/work/` - portfolio media files for video and audio previews
 
 Open `index.html` directly in a browser, or serve the folder with any static
