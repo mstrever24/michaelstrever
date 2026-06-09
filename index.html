@@ -16,7 +16,7 @@
     >
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="home-page">
     <nav class="nav" aria-label="Primary navigation">
       <a class="nav-logo" href="index.html#home">M. Strever</a>
       <ul class="nav-links">
@@ -32,53 +32,51 @@
 
     <main>
       <section class="hero" id="home">
-        <div class="room" aria-hidden="true">
-          <div class="wall-back"></div>
-          <div class="wall-floor"></div>
-          <div class="wall-ceiling"></div>
-          <div class="wall-left"></div>
-          <div class="wall-right"></div>
-
-          <div class="light-pool"></div>
-          <div class="light-beam"></div>
-          <div class="light-floor"></div>
-
-          <svg class="cracks" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M210 0 L218 52 L212 96 L226 144 L220 198 L236 258 L228 320" />
-            <path d="M226 144 L252 152 L278 146 L296 154" class="crack-soft" />
-            <path d="M220 198 L248 206 L272 200 L300 208" class="crack-soft" />
-            <path d="M780 0 L771 62 L787 108 L778 170 L794 224 L784 290" />
-            <path d="M787 108 L814 116 L840 110 L862 118" class="crack-soft" />
-            <path d="M420 800 L428 740 L418 698 L432 648 L424 590 L440 530" />
-            <path d="M432 648 L458 642 L482 650 L510 644" class="crack-soft" />
-            <path d="M680 800 L688 752 L678 712 L692 664 L682 610" class="crack-soft" />
-            <path d="M100 400 L150 408 L200 400 L260 408 L320 400" class="crack-hairline" />
-            <path d="M880 340 L930 348 L980 340 L1040 346 L1100 340 L1160 346" class="crack-hairline" />
-            <path d="M480 0 L474 38 L482 70 L476 108 L488 140" class="crack-hairline" />
-            <path d="M0 260 L60 268 L110 260 L170 268 L230 260" class="crack-hairline" />
-            <path d="M950 560 L1000 568 L1050 560 L1100 566 L1160 558" class="crack-hairline" />
-          </svg>
-
-          <div class="wall-label wall-label-left">Sound &mdash; Vision &mdash; Depth</div>
-          <div class="wall-label wall-label-right">Michael Strever &mdash; Audio Architecture</div>
-
-          <div class="floor-stamp floor-stamp-left">
-            <span class="stamp-label">Package</span>
-            <span class="stamp-val">End to End</span>
+        <div class="studio-scene" aria-hidden="true">
+          <div class="studio-wall">
+            <div class="foam-panel foam-panel--left"></div>
+            <div class="foam-panel foam-panel--right"></div>
           </div>
-          <div class="floor-stamp floor-stamp-right">
-            <span class="stamp-label">Signal</span>
-            <span class="stamp-val stamp-val--maroon">Music + Sound</span>
+          <div class="screen-glow"></div>
+          <div class="monitor-rig">
+            <div class="monitor">
+              <div class="monitor-screen">
+                <div class="rx-topbar">
+                  <span>RX EDIT</span>
+                  <span>SPECTRAL REPAIR / DIALOGUE ISOLATE</span>
+                </div>
+                <div class="waveform-view">
+                  <div class="spectrogram"></div>
+                  <div class="waveform waveform--top"></div>
+                  <div class="waveform waveform--bottom"></div>
+                  <div class="playhead"></div>
+                  <div class="time-ruler">
+                    <span>00:00:18</span>
+                    <span>00:01:42</span>
+                    <span>00:03:16</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="monitor-stand"></div>
+            <div class="headphones">
+              <div class="headband"></div>
+              <div class="earcup earcup--left"></div>
+              <div class="earcup earcup--right"></div>
+            </div>
+          </div>
+          <div class="desk-plane">
+            <div class="coffee-cup"></div>
           </div>
         </div>
 
         <div class="hero-content scroll-drift" data-scroll-drift="26">
-          <p class="hero-eyebrow">Sound & Visual Production</p>
+          <p class="hero-eyebrow">Sound design / location audio / post-production</p>
           <h1 class="hero-name">Michael<br>Strever</h1>
           <div class="hero-rule"></div>
           <p class="hero-tagline">
-            Immersive visual stories driven by the deep intersection of music,
-            sound, recording, and emotional depth.
+            Dark-room audio work for picture: precise dialogue, spectral repair,
+            location texture, sound design, and final delivery.
           </p>
           <div class="hero-panels" aria-label="Primary service paths">
             <a href="#services" class="hero-panel">

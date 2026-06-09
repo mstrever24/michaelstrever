@@ -3,7 +3,8 @@
 A minimal static portfolio site for Michael Strever, focused on immersive music,
 sound, and visual production work. The visual system uses a paint-inspired
 palette: dark navy-blue, ink black, viola oxblood, avocado green, cool concrete
-neutrals, serif display typography, and a brutalist 3D room hero.
+neutrals, serif display typography, and a noir sound-design studio homepage
+with a widescreen waveform monitor.
 
 ## Files
 
