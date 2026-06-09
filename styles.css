@@ -363,10 +363,10 @@ a {
 .hero-name {
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: clamp(60px, 9vw, 110px);
+  font-size: clamp(68px, 10.8vw, 144px);
   font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 0.95;
+  letter-spacing: -0.045em;
+  line-height: 0.86;
   text-shadow:
     0 2px 0 rgba(255, 255, 255, 0.5),
     0 6px 24px rgba(0, 0, 0, 0.12);
@@ -384,11 +384,13 @@ a {
 }
 
 .hero-tagline {
-  max-width: 440px;
+  max-width: 520px;
   color: var(--ink-light);
-  font-size: 12px;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 300;
   letter-spacing: 0.03em;
-  line-height: 1.85;
+  line-height: 1.42;
   opacity: 0;
   animation: fadeUp 0.9s 1s forwards;
 }
@@ -500,7 +502,7 @@ section {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 52px;
+  margin-bottom: clamp(48px, 7vw, 88px);
   color: var(--ink-ghost);
   font-size: 10px;
   letter-spacing: 0.26em;
@@ -517,17 +519,17 @@ section {
 
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 820px);
+  grid-template-columns: minmax(0, 980px);
   align-items: start;
 }
 
 .about-body {
   color: var(--ink-light);
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: clamp(24px, 3.2vw, 42px);
   font-weight: 300;
-  letter-spacing: 0.01em;
-  line-height: 1.9;
+  letter-spacing: -0.015em;
+  line-height: 1.28;
 }
 
 .about-body p + p {
@@ -547,7 +549,7 @@ section {
 }
 
 .service-card {
-  padding: 36px 28px;
+  padding: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 42px);
   border-right: 0.5px solid var(--border);
   border-bottom: 0.5px solid var(--border);
   transition: background 0.3s;
@@ -569,18 +571,20 @@ section {
 }
 
 .service-title {
-  margin-bottom: 12px;
+  margin-bottom: 18px;
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: clamp(30px, 4vw, 54px);
   font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.96;
   transition: color 0.2s;
 }
 
 .service-desc {
   color: var(--ink-light);
-  font-size: 12px;
-  line-height: 1.75;
+  font-size: 13px;
+  line-height: 1.85;
 }
 
 .service-list {
@@ -637,7 +641,7 @@ section {
 .work-item {
   position: relative;
   overflow: hidden;
-  padding: 40px 36px;
+  padding: clamp(36px, 4vw, 58px) clamp(28px, 4vw, 52px);
   background: var(--cream);
   cursor: pointer;
   transition: background 0.3s;
@@ -675,11 +679,13 @@ section {
 }
 
 .work-title {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: clamp(34px, 4.5vw, 62px);
   font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.96;
 }
 
 .work-client {
@@ -878,14 +884,16 @@ audio.media-player {
 .process-title {
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: clamp(28px, 3.5vw, 48px);
   font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
 }
 
 .process-desc {
   color: var(--ink-light);
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: 13px;
+  line-height: 1.85;
 }
 
 .contact-inner {
@@ -898,9 +906,10 @@ audio.media-player {
 .contact-heading {
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(48px, 7vw, 96px);
   font-weight: 300;
-  line-height: 1.05;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
 }
 
 .contact-heading em {
@@ -1022,7 +1031,7 @@ footer {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translate3d(0, calc(24px + var(--scroll-drift, 0px)), 0);
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
@@ -1030,7 +1039,16 @@ footer {
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, var(--scroll-drift, 0px), 0);
+}
+
+.scroll-drift {
+  transform: translate3d(0, var(--scroll-drift, 0px), 0);
+  will-change: transform;
+}
+
+[data-scroll-drift] {
+  will-change: transform;
 }
 
 .gear-page {

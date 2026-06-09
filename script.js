@@ -94,15 +94,42 @@ const renderMediaSlot = (slot) => {
 document.querySelectorAll(".work-media").forEach(renderMediaSlot);
 
 const cracks = document.querySelector(".cracks");
+const driftElements = [...document.querySelectorAll("[data-scroll-drift]")];
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-window.addEventListener(
-  "scroll",
-  () => {
-    const scrolled = window.scrollY;
+const updateScrollMovement = () => {
+  const scrolled = window.scrollY;
 
-    if (cracks && scrolled < window.innerHeight) {
-      cracks.style.transform = `translateY(${scrolled * 0.15}px)`;
-    }
-  },
-  { passive: true }
-);
+  if (cracks && scrolled < window.innerHeight) {
+    cracks.style.transform = `translateY(${scrolled * 0.15}px)`;
+  }
+
+  if (prefersReducedMotion) return;
+
+  driftElements.forEach((element) => {
+    const strength = Number(element.dataset.scrollDrift || 12);
+    const rect = element.getBoundingClientRect();
+    const midpoint = rect.top + rect.height / 2;
+    const viewportOffset = (midpoint - window.innerHeight / 2) / window.innerHeight;
+    const drift = Math.max(Math.min(viewportOffset * strength, strength), -strength);
+
+    element.style.setProperty("--scroll-drift", `${drift.toFixed(2)}px`);
+  });
+};
+
+let scrollTicking = false;
+
+const requestScrollMovement = () => {
+  if (scrollTicking) return;
+
+  window.requestAnimationFrame(() => {
+    updateScrollMovement();
+    scrollTicking = false;
+  });
+
+  scrollTicking = true;
+};
+
+updateScrollMovement();
+window.addEventListener("scroll", requestScrollMovement, { passive: true });
+window.addEventListener("resize", requestScrollMovement);
