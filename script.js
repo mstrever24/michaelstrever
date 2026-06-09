@@ -47,7 +47,6 @@ const renderMediaSlot = (slot) => {
   const label = slot.dataset.mediaLabel || `${type} preview`;
   const file = slot.dataset.mediaFile || (type === "audio" ? "sample.mp3" : "sample.mp4");
   const folder = slot.dataset.mediaFolder || "assets/work";
-  const action = slot.dataset.mediaAction || (type === "audio" ? "Listen" : "View");
 
   slot.replaceChildren();
 
@@ -71,7 +70,6 @@ const renderMediaSlot = (slot) => {
 
     placeholder.append(kicker, title, note);
     frame.append(placeholder);
-    frame.append(createMediaOverlay(label, action, file));
     slot.append(frame);
     return;
   }
@@ -90,23 +88,7 @@ const renderMediaSlot = (slot) => {
   source.type = mediaTypes[getExtension(src)] || `${type}/${getExtension(src)}`;
   player.append(source, "Your browser does not support this media player.");
   frame.append(player);
-  frame.append(createMediaOverlay(label, action, src.split("/").pop() || file));
   slot.append(frame);
-};
-
-const createMediaOverlay = (label, action, file) => {
-  const overlay = document.createElement("div");
-  const top = document.createElement("span");
-  const center = document.createElement("strong");
-  const bottom = document.createElement("em");
-
-  overlay.className = "media-overlay";
-  top.textContent = label;
-  center.textContent = action;
-  bottom.textContent = file;
-
-  overlay.append(top, center, bottom);
-  return overlay;
 };
 
 document.querySelectorAll(".work-media").forEach(renderMediaSlot);
